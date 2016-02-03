@@ -22,6 +22,9 @@ public class AskMeLayoutFactory extends MultiRecyclerViewFactory
 
         switch (type)
         {
+            case LAYOUT_SINGLE_POSTER:
+                return LayoutInflater.from(parent.getContext()).inflate(R.layout.single_image_row, parent, false);
+
             case LAYOUT_VIEW_PAGER:
                 return LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_view_pager, parent, false);
 
@@ -38,6 +41,9 @@ public class AskMeLayoutFactory extends MultiRecyclerViewFactory
         final LayoutType type = LayoutType.getType(rowID);
         switch (type)
         {
+            case LAYOUT_SINGLE_POSTER:
+                return new SliderRowViewHolder(itemView);
+
             case LAYOUT_VIEW_PAGER:
                 return new SliderRowViewHolder(itemView);
 
@@ -85,7 +91,7 @@ public class AskMeLayoutFactory extends MultiRecyclerViewFactory
 
     public enum LayoutType
     {
-        LAYOUT_NONE(0), LAYOUT_VIEW_PAGER(1), LAYOUT_TYPE_NORMAL(2);
+        LAYOUT_NONE(0), LAYOUT_VIEW_PAGER(1), LAYOUT_TYPE_NORMAL(2), LAYOUT_SINGLE_POSTER(3);
 
         private int _type;
 
@@ -104,6 +110,11 @@ public class AskMeLayoutFactory extends MultiRecyclerViewFactory
             else if (type == LAYOUT_TYPE_NORMAL.getCode())
             {
                 return LAYOUT_TYPE_NORMAL;
+
+            }
+            else if (type == LAYOUT_SINGLE_POSTER.getCode())
+            {
+                return LAYOUT_SINGLE_POSTER;
 
             }
             return LAYOUT_NONE;
