@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvRowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@+id/containerSeeMore"
+        android:singleLine="true"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvVideoRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/movieCyclerRowHeight"
+        android:layout_below="@+id/containerRowHeader"
+        android:layout_marginLeft="@dimen/globalMargin"/>
+
+
+</LinearLayout>

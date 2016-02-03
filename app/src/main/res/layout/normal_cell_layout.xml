@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/moviesTileWidth"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/globalMarginMid">
+
+    <LinearLayout
+        android:layout_width="@dimen/moviesTileWidth"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- android:background="@color/globalLightGreyBlackThemeColor"
+            android:src="@drawable/placeholder_small"-->
+        <ImageView
+            android:id="@+id/imgCellPoster"
+            android:layout_width="@dimen/moviesTileWidth"
+            android:layout_height="@dimen/moviesTileHeight"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/moviesTileWidth"
+            android:layout_height="@dimen/resumeWatchingOverlayHeight"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/moviesTileWidth"
+                android:layout_height="@dimen/resumeWatchingOverlayHeight"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/globalPaddingMid">
+
+                <TextView
+                    android:id="@+id/tvItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="qwerty"
+                    android:textSize="@dimen/cellTitleTextSize"/>
+
+                <TextView
+                    android:id="@+id/tvItemOlderPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:paddingLeft="@dimen/globalMarginMid"
+                    android:paddingRight="@dimen/globalPaddingMid"
+                    android:singleLine="true"
+                    android:text="qwerty"
+                    android:textSize="@dimen/cellTitleTextSize"/>
+
+                <TextView
+                    android:id="@+id/tvItemNewerPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:paddingLeft="@dimen/globalMarginMid"
+                    android:singleLine="true"
+                    android:text="qwerty"
+                    android:textSize="@dimen/cellTitleTextSize"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
