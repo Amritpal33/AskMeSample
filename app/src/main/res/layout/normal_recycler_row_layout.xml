@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/globalPadding">
 
     <TextView
         android:id="@+id/tvRowTitle"
@@ -10,6 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        android:paddingTop="@dimen/globalPaddingMid"
+        android:paddingBottom="@dimen/globalPaddingMid"
         android:layout_gravity="center_vertical"
         android:layout_toLeftOf="@+id/containerSeeMore"
         android:singleLine="true"/>
@@ -19,8 +22,6 @@
         android:id="@+id/rvVideoRecycler"
         android:layout_width="match_parent"
         android:layout_height="@dimen/movieCyclerRowHeight"
-        android:layout_below="@+id/containerRowHeader"
-        android:layout_marginLeft="@dimen/globalMargin"/>
-
+        android:layout_below="@+id/containerRowHeader"/>
 
 </LinearLayout>

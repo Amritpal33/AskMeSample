@@ -42,7 +42,7 @@ public class AskMeLayoutFactory extends MultiRecyclerViewFactory
         switch (type)
         {
             case LAYOUT_SINGLE_POSTER:
-                return new SliderRowViewHolder(itemView);
+                return new SingleImageRowHolder(itemView);
 
             case LAYOUT_VIEW_PAGER:
                 return new SliderRowViewHolder(itemView);

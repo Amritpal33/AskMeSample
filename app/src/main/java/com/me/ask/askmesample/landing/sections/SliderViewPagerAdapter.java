@@ -13,6 +13,7 @@ import com.me.ask.askmesample.factory.OnMultiCyclerItemClickListener;
 import com.me.ask.askmesample.factory.models.DataList;
 import com.me.ask.askmesample.factory.models.ItemVO;
 import com.me.ask.askmesample.factory.models.OnDataListUpdateListener;
+import com.me.ask.askmesample.services.models.SectionItemVO;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -26,7 +27,6 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
     private DataList<ItemVO> _itemVOs;
     private Context _context;
     private OnMultiCyclerItemClickListener _onMultiCyclerItemClickListener;
-    private ViewPager _container;
 
 
     public SliderViewPagerAdapter(Context context, DataList<ItemVO> itemVOList, OnMultiCyclerItemClickListener listener)
@@ -41,7 +41,6 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
     @Override
     public Object instantiateItem(ViewGroup container, int position)
     {
-        _container = (ViewPager) container;
         View view = LayoutInflater.from(_context).inflate(R.layout.slider_cell_layout, container, false);
         initView(view, _itemVOs.get(position), position);
         view.setTag(R.id.idViewPagerItem, _itemVOs.get(position));
@@ -55,7 +54,7 @@ public class SliderViewPagerAdapter extends PagerAdapter implements View.OnClick
     {
         ImageView imageView = (ImageView) v.findViewById(R.id.imgSliderPoster);
         Picasso.with(_context)
-                .load("url")
+                .load(((SectionItemVO) itemVO).getImageUrl())
                 .into(imageView);
     }
 

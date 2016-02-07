@@ -22,14 +22,16 @@
 
         <LinearLayout
             android:layout_width="@dimen/moviesTileWidth"
-            android:layout_height="@dimen/resumeWatchingOverlayHeight"
+            android:layout_height="@dimen/overlayHeight"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
 
             <LinearLayout
-                android:layout_width="@dimen/moviesTileWidth"
-                android:layout_height="@dimen/resumeWatchingOverlayHeight"
+                android:layout_width="0dp"
+                android:layout_weight="0.95"
+                android:layout_height="@dimen/overlayHeight"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
@@ -42,6 +44,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="qwerty"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="@dimen/cellTitleTextSize"/>
 
                 <TextView
@@ -49,28 +52,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:paddingLeft="@dimen/globalMarginMid"
                     android:paddingRight="@dimen/globalPaddingMid"
                     android:singleLine="true"
                     android:text="qwerty"
-                    android:textSize="@dimen/cellTitleTextSize"/>
+                    android:textSize="@dimen/cellSubtitleTextSize"/>
 
                 <TextView
                     android:id="@+id/tvItemNewerPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:paddingLeft="@dimen/globalMarginMid"
                     android:singleLine="true"
                     android:text="qwerty"
-                    android:textSize="@dimen/cellTitleTextSize"/>
+                    android:textSize="@dimen/cellSubtitleTextSize"/>
 
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/imgCart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="@dimen/globalMarginMid"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_launcher"/>
 
         </LinearLayout>
 

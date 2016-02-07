@@ -16,7 +16,8 @@
 
     <!--Text sizes-->
 
-    <dimen name="cellTitleTextSize">16sp</dimen>
+    <dimen name="cellTitleTextSize">13sp</dimen>
+    <dimen name="cellSubtitleTextSize">11sp</dimen>
 
 
 
@@ -32,7 +33,7 @@
     <!--MultiCycler dimensions-->
     <dimen name="moviesTileWidth">130dp</dimen>
     <dimen name="moviesTileHeight">173dp</dimen>
-    <dimen name="resumeWatchingOverlayHeight">40dp</dimen>
-    <dimen name="movieCyclerRowHeight">213dp</dimen>
+    <dimen name="overlayHeight">60dp</dimen>
+    <dimen name="movieCyclerRowHeight">233dp</dimen>
 
 </resources>

@@ -34,7 +34,7 @@ public class NormalRowViewHolder extends RowViewHolder
         _rowVo = new WeakReference<>(vo);
         RecyclerView customListRecyclerView = getRecyclerView();
         customListRecyclerView.setAdapter(vo.getCellAdapter(factory, listener));
-        getTitleView().setText(vo.getDisplayTitle());
+        getTitleView().setText(vo.getDisplayLabel());
     }
 
     private RecyclerView getRecyclerView()

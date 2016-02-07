@@ -8,13 +8,19 @@ import com.me.ask.askmesample.R;
 import com.me.ask.askmesample.factory.OnMultiCyclerItemClickListener;
 import com.me.ask.askmesample.factory.holders.CellViewHolder;
 import com.me.ask.askmesample.factory.models.ItemVO;
+import com.me.ask.askmesample.services.models.SectionItemVO;
 import com.squareup.picasso.Picasso;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Created by Amritpal.Makkar on 03-feb-16.
  */
 public class NormalCellViewHolder extends CellViewHolder implements View.OnClickListener
 {
+    private WeakReference<OnMultiCyclerItemClickListener> _onMultiCyclerItemClickListener;
+    private WeakReference<ItemVO> _itemVO;
+
     public NormalCellViewHolder(View itemView)
     {
         super(itemView);
@@ -23,12 +29,15 @@ public class NormalCellViewHolder extends CellViewHolder implements View.OnClick
     @Override
     public void bind(ItemVO itemVO, int position, OnMultiCyclerItemClickListener listener)
     {
-        ImageView imageView = getCellImageView();
-        Picasso.with(super.itemView.getContext()).load("url").into(imageView);
+        _onMultiCyclerItemClickListener = new WeakReference<>(listener);
+        _itemVO = new WeakReference<>(itemVO);
 
-        getItemNameTextview().setText("");
-        getOlderPriceTextView().setText("");
-        getNewerPriceTextView().setText("");
+        ImageView imageView = getCellImageView();
+        Picasso.with(super.itemView.getContext()).load(((SectionItemVO) itemVO).getImageUrl()).into(imageView);
+
+        getItemNameTextview().setText(((SectionItemVO) itemVO).getItemLabel());
+        getOlderPriceTextView().setText("1100");
+        getNewerPriceTextView().setText("899");
         super.itemView.setOnClickListener(this);
     }
 
@@ -61,6 +70,7 @@ public class NormalCellViewHolder extends CellViewHolder implements View.OnClick
     @Override
     public void onClick(View v)
     {
-
+        ItemVO itemVO = _itemVO.get();
+        _onMultiCyclerItemClickListener.get().onMultiCyclerItemClick(v, itemVO);
     }
 }

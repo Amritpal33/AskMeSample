@@ -10,30 +10,21 @@ import com.me.ask.askmesample.factory.adapters.CellAdapter;
 
 public abstract class RowVO
 {
-    private String _displayTitle;
-    private boolean _showMoreButton;
-    private int _rowID;
+    private String _displayLabel;
     protected DataList<ItemVO> _items;
     private CellAdapter _customRowAdapter;
     private int _rowType;
 
-    public RowVO(String displayTitle, int rowID, DataList<ItemVO> cellDataList, int rowType)
+    public RowVO(String displayLabel,DataList<ItemVO> items, int rowType)
     {
-        this(displayTitle, rowID, cellDataList, rowType, true);
-    }
-
-    public RowVO(String displayTitle, int rowID, DataList<ItemVO> items, int rowType, boolean showMoreButton)
-    {
-        _displayTitle = displayTitle;
-        _showMoreButton = showMoreButton;
-        _rowID = rowID;
+        _displayLabel = displayLabel;
         _items = items;
         _rowType = rowType;
     }
 
-    public String getDisplayTitle()
+    public String getDisplayLabel()
     {
-        return _displayTitle;
+        return _displayLabel;
     }
 
     public CellAdapter getCellAdapter(MultiRecyclerViewFactory factory, OnMultiCyclerItemClickListener listener)
@@ -54,30 +45,5 @@ public abstract class RowVO
     {
         return _items;
 
-    }
-
-    public int getRowID()
-    {
-        return _rowID;
-    }
-
-    public boolean isShowMoreButton()
-    {
-        return _showMoreButton;
-    }
-
-
-    @Override
-    public boolean equals(Object o)
-    {
-        return (o instanceof RowVO && this._rowID == ((RowVO) o)._rowID);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        final int prime = 31;
-        int result = 17;
-        return prime * result + _rowID;
     }
 }
